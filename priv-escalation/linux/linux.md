@@ -2,15 +2,17 @@
 
 **`hostname`** - name of the device, can be usefull <br>
 **`uname -a`** - information about kernel system, search in exploit DB <br>
-**`/proc/version`** - information about compilers (c++), kernel version <br>
+**`cat /proc/version`** - information about compilers (c++), kernel version <br>
 **`ps`** - idk <br>
-
+**`id`** - users privilege level<br>
 **`sudo -l`** - what commands can user run with root privileges <br>
-
-**`/etc/passwd`** - discoved users on the system <br>
+**`env`** - enviromental variables<br>
+**`cat /etc/passwd`** - discoved users on the system <br>
+**`cat /etc/issue`** - what linux is running <br>
 **`history`** - can show passwords and usernames or any info <br> <br>
-### find command
-`find . -name flag1.txt` find the file named “flag1.txt” in the current directory <br>
+
+### find commands
+`find . -name flag1.txt 2>/dev/null` find the file named “flag1.txt” in the current directory <br>
 `find /home -name flag1.txt` find the file names “flag1.txt” in the /home directory <br>
 `find / -type d -name config` find the directory named config under “/” <br>
 `find / -type f -perm 0777` find files with the 777 permissions (files readable, writable, and executablebyall users) <br>
