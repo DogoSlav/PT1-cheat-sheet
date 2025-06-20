@@ -1,14 +1,14 @@
 ## Enumeration
 
-**hostname** - name of the device, can be usefull <br>
-**uname -a** - information about kernel system, search in exploit DB <br>
-**/proc/version** - information about compilers (c++), kernel version <br>
-**ps** - idk <br>
+**`hostname`** - name of the device, can be usefull <br>
+**`uname -a`** - information about kernel system, search in exploit DB <br>
+**`/proc/version`** - information about compilers (c++), kernel version <br>
+**`ps`** - idk <br>
 
-**sudo -l** - what commands can user run with root privileges <br>
+**`sudo -l`** - what commands can user run with root privileges <br>
 
-**/etc/passwd** - discoved users on the system <br>
-**history** - can show passwords and usernames or any info <br> <br>
+**`/etc/passwd`** - discoved users on the system <br>
+**`history`** - can show passwords and usernames or any info <br> <br>
 ### find command
 `find . -name flag1.txt` find the file named “flag1.txt” in the current directory <br>
 `find /home -name flag1.txt` find the file names “flag1.txt” in the /home directory <br>
