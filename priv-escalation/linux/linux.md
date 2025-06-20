@@ -23,3 +23,12 @@
 `find / -cmin -60` find files changed within the last hour (60 minutes) <br>
 `find / -amin -60` find files accesses within the last hour (60 minutes) <br>
 `find / -size 50M` find files with a 50 MB size <br>
+
+## Kernel exploit
+
+Check the kernel information and try to find existing exploits, be sure you understande them
+
+## Sudo
+
+
+
