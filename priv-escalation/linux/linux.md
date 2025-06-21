@@ -8,6 +8,7 @@
 **`sudo -l`** - what commands can user run with root privileges <br>
 **`env`** - enviromental variables<br>
 **`cat /etc/passwd`** - discoved users on the system <br>
+**`cat /etc/shadow`** - hashes of passwords <br>
 **`cat /etc/issue`** - what linux is running <br>
 **`history`** - can show passwords and usernames or any info <br> <br>
 
@@ -26,10 +27,24 @@
 
 ## Kernel exploit
 
-Check the kernel information and try to find existing exploits, be sure you understande them
+Check the kernel information and try to find existing exploits, be sure you understande them. [ExploitDB](https://www.exploit-db.com/)
 
 ## Sudo
 
 Run `sudo -l` command. Than look at [GTFOBins](https://gtfobins.github.io/) and search for bypass ways.
 
+## SUID
+Commands with permmisions of the file owner <br>
+
+`find / -type f -perm -04000 -ls 2>/dev/null` will list files that have SUID or SGID bits set. <br>
+Again you can compare compare executables on [GTFOBins+suid](https://gtfobins.github.io/#+suid).
+
+It can be usefull to crack passwords using /etc/shadow and /etc/passwd files `unshadow passwd.txt shadow.txt > passwords.txt` and then johnTheRipper `john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt passwords.txt` <br>
+
+## Capabilities
+
+We can use the `getcap -r / 2>/dev/null` tool to list enabled capabilities. <br>
+Search on [GTFOBins+capabilities](https://gtfobins.github.io/#+capabilities) <br>
+
+## Cron Jobs
 
