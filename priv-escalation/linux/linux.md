@@ -30,5 +30,6 @@ Check the kernel information and try to find existing exploits, be sure you unde
 
 ## Sudo
 
+Run `sudo -l` command. Than look at [GTFOBins](https://gtfobins.github.io/) and search for bypass ways.
 
 
