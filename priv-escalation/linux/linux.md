@@ -86,6 +86,6 @@ NFS (Network File Sharing) configuration is kept in the /etc/exports file. This 
 
 `cat /etc/exports`
 
-![image](/img/shell.png)
+![image](img/shell.png)
 
 The critical element for this privilege escalation vector is the “no_root_squash”. By default, NFS will change the root user to nfsnobody and strip any file from operating with root privileges. If the “no_root_squash” option is present on a writable share, we can create an executable with SUID bit set and run it on the target system.
