@@ -124,7 +124,7 @@ sc stop windowsscheduler
 sc start windowsscheduler
 </pre>
 
-## Unquoted Service Paths
+### Unquoted Service Paths
 
 When working with Windows services, a very particular behaviour occurs when the service is configured to point to an "unquoted" executable. By unquoted, we mean that the path of the associated executable isn't properly quoted to account for spaces on the command.
 
@@ -139,7 +139,7 @@ Check if you have permisions in that folder, ussualy `C:\Program Files` and `C:\
 
 You can again create a file and start a reverse shell as above.
 
-## Insecure Service Permissions
+### Insecure Service Permissions
 
 To check for a service DACL from the command line, you can use [Accesschk](https://learn.microsoft.com/en-us/sysinternals/downloads/accesschk) from the Sysinternals suite.
 
