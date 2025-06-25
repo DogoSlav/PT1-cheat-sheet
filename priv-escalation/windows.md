@@ -160,3 +160,24 @@ sc start THMService
 
 </pre>
 
+## Abusing dangerous privileges
+
+### Windows Privileges
+
+Check the user's privileges.
+<pre>whoami /priv</pre>
+
+Than compere it with this project [Priv2Admin](https://github.com/gtworek/Priv2Admin)
+
+In case [TryHackme](https://tryhackme.com/room/windowsprivesc20)
+
+## Abusing vulnerable software
+
+Get information about software
+
+<pre> wmic product get name,version,vendor </pre>
+
+It might take time to finish
+
+Than you can search for public exploits about the software [ExploitDB](https://www.exploit-db.com/)
+
