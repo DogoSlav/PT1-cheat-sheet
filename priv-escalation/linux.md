@@ -26,6 +26,14 @@
 `find / -amin -60` find files accesses within the last hour (60 minutes) <br>
 `find / -size 50M` find files with a 50 MB size <br>
 
+## Logs
+
+<pre> find /var/log -group adm -type f -exec ls -lh {} \; 
+grep -i "password" /var/log/* 2>/dev/null
+</pre>
+
+<pre> cd /var/log ; grep -Ri "pass" </pre>
+
 ## Kernel exploit
 
 Check the kernel information and try to find existing exploits, be sure you understande them. [ExploitDB](https://www.exploit-db.com/)

@@ -38,6 +38,9 @@ Accesing the files
 
 If it requeries cred use `--user=USERNAME --password=PASSWORD` instead of `-N`
 
+Get Users 
+<pre> nxc smb 10.10.227.233 -u anonymous -p "" --rid-brute | grep "SidTypeUser" </pre>
+
 ## Domain Enumeration
 
 ### LDAP Enumeration
